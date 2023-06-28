@@ -24,18 +24,7 @@ const {
 // );
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CONFIG PARA TODO
-const sequelize = DATABASE
-  ? new Sequelize(DATABASE, USERNAME, PASSWORD, {
-      host: HOST,
-      dialect: "postgres",
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false,
-        },
-      },
-    })
-  : new Sequelize(
+const sequelize = new Sequelize(
       `postgres://pet_friendly_user:GJejcrPh6agPMvqYYmpkxpzQnuoRv1hh@dpg-cieaaemnqql22egghsdg-a.oregon-postgres.render.com/pet_friendly`,
       {
         logging: false, // set to console.log to see the raw SQL queries
